@@ -1,3 +1,16 @@
 linkabix
 a clone(ish) of http://news.ycombinator.com/
 peter cooper
+
+WHY?
+  Linkabix is an attempt at recreating the functionality of Hacker News
+  using Rails 2.3. In another sense, it aims to be a demonstration of 
+  developing a Rails 2.3 application with Behavior Driven Development 
+  using standard practices as of December 2008.
+
+RELEASES?
+  not yet
+
+DEV PROCESS
+  Implemented template to load plugins, Rails app was generated from this
+  See lib/template3.rb
