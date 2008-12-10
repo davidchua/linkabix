@@ -69,3 +69,70 @@ Migrating to AddOpenIdAuthenticationTables (20081208033654)
   [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_tags_on_name')[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-12-08 03:40:10) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout.erb (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-12-08 03:40:14) [GET]
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-12-08 03:40:16) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"DM3VE2IKnyzi31B8bxFD9Ctt/NDzb9m4kRZNQFZ8hC8=", "login"=>"", "password"=>""}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Failed login for '' from 127.0.0.1 at Mon Dec 08 03:40:16 UTC 2008
+Rendering sessions/new
+Completed in 85ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-12-08 03:40:18) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"DM3VE2IKnyzi31B8bxFD9Ctt/NDzb9m4kRZNQFZ8hC8=", "login"=>"x", "password"=>"x"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'x') LIMIT 1[0m
+Failed login for 'x' from 127.0.0.1 at Mon Dec 08 03:40:18 UTC 2008
+Rendering sessions/new
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/session]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2008-12-08 03:40:22) [GET]
+Rendering users/new
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2008-12-08 03:40:29) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"demon", "password"=>"demon", "login"=>"peter", "email"=>"peter@petercooper.co.uk"}, "commit"=>"Sign up", "authenticity_token"=>"DM3VE2IKnyzi31B8bxFD9Ctt/NDzb9m4kRZNQFZ8hC8="}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'peter') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'peter@petercooper.co.uk') LIMIT 1[0m
+Rendering users/new
+Completed in 43ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2008-12-08 03:40:34) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"demon1demon", "password"=>"demon1demon", "login"=>"peter", "email"=>"peter@petercooper.co.uk"}, "commit"=>"Sign up", "authenticity_token"=>"DM3VE2IKnyzi31B8bxFD9Ctt/NDzb9m4kRZNQFZ8hC8="}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'peter') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'peter@petercooper.co.uk') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "email", "created_at") VALUES('', '55df66122e872f8aef573624313997d9124e6d86', '2008-12-08 03:40:34', '320608b30e2a285e0082f3f5f98938be9fc9486f', NULL, NULL, 'peter', 'peter@petercooper.co.uk', '2008-12-08 03:40:34')[0m
+Redirected to /
+Completed in 27ms (DB: 1) | 302 Found [http://127.0.0.1/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-12-08 03:40:34) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout.erb (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-12-08 03:40:37) [GET]
+Rendering sessions/new
+Completed in 61ms (View: 60, DB: 0) | 200 OK [http://127.0.0.1/login]
